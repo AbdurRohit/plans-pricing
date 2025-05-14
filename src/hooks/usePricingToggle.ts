@@ -21,10 +21,9 @@ export const usePricingToggle = (): UsePricingToggleResult => {
     const [selectedPlan, setSelectedPlan] = useState<PlanType>(null);
     const [isSuccessVisible, setIsSuccessVisible] = useState(false);
 
-    // Annual discount (20%)
     const annualDiscount = 0.2;
 
-    // Load saved preferences from localStorage on component mount
+ 
     useEffect(() => {
         if (typeof window !== 'undefined') {
             try {

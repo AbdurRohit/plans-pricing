@@ -10,20 +10,20 @@ interface SuccessMessageProps {
   price: number;
 }
 
-const SuccessMessage: React.FC<SuccessMessageProps> = ({ 
-  selectedPlan, 
-  billingCycle, 
+const SuccessMessage: React.FC<SuccessMessageProps> = ({
+  selectedPlan,
+  billingCycle,
   isVisible,
   price
 }) => {
   if (!isVisible || !selectedPlan) return null;
-  
+
   const planNames = {
     regular: 'Regular Plan',
     advanced: 'Advanced Plan',
     business: 'Business Plan'
   };
-  
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -37,7 +37,7 @@ const SuccessMessage: React.FC<SuccessMessageProps> = ({
       <div>
         <h3 className="text-sm font-medium text-gray-900">Success!</h3>
         <p className="mt-1 text-sm text-gray-600">
-          You've selected the <span className="font-semibold">{planNames[selectedPlan]}</span> with{' '}
+          You&apos;ve selected the <span className="font-semibold">{planNames[selectedPlan]}</span> with{' '}
           <span className="font-semibold">{billingCycle === 'monthly' ? 'monthly' : 'annual'}</span>{' '}
           billing at <span className="font-semibold">${price}{billingCycle === 'monthly' ? '/month' : '/year'}</span>.
         </p>
